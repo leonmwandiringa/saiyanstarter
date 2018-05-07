@@ -8,7 +8,7 @@ const JSON_FILES = ["tsconfig.json", "package.json"];
 const ASSET_ASSIST = ["src/**.json", "src/**/**.json"];
 
 //define instructions
-const tsProject = typescript.createProject("tsconfig.json");
+const tsProject = typescript.createProject(JSON_FILES[0]);
 
 gulp.task("compile", ()=>{
 
