@@ -5,10 +5,10 @@
 const gulp = require("gulp");
 const typescript = require("gulp-typescript");
 const JSON_FILES = ["tsconfig.json", "package.json"];
-const ASSET_ASSIST = ["src/**/**.json", "src/**/**.json"];
+const ASSET_ASSIST = ["src/**.json", "src/**/**.json"];
 
 //define instructions
-const tsProject = typescript.createProject(JSON_FILES[0]);
+const tsProject = typescript.createProject("tsconfig.json");
 
 gulp.task("compile", ()=>{
 
