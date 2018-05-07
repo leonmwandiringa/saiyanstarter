@@ -1,7 +1,7 @@
 {
-  "name": "typescriptreststarter",
+  "name": "saiyanststarter",
   "version": "1.0.0",
-  "description": "A rest Typescript written rest api",
+  "description": "A rest BDD Typescript nodejs written rest api",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
