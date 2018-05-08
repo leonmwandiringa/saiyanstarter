@@ -17,7 +17,6 @@ class App{
 
         this.express = express();
         this.globalMiddlewares();
-        this.securityMiddelwares();
         this.routes();
 
     }
@@ -31,15 +30,14 @@ class App{
 
     private routes(){
 
-        this.express.use("/", router);
+        let route = express.Router();
+
+        route.get("/", (req, res)=>{
+            res.send("sent");
+        });
+        this.express.use(route);
   
     }
-
-    private securityMiddelwares(){
-
-
-    }
-
 
 }
 
