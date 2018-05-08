@@ -17,10 +17,11 @@ class GlobalRoutes{
     }
 
 
-    private initiateRoutes(){
+    private initiateRoutes(): void{
         this.router.get("/", HomeController.home);
     }
 
 }
+
 
 export default new GlobalRoutes().router;

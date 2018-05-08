@@ -15,7 +15,7 @@ debug("ts-express:server");
 
 //initiate dotenv
 dotenv.config({
-    path: path.join(__dirname, "../\.env")
+    path: "./env"
 });
 
 let Port = Core.normalize(process.env.PORT || 3000); 

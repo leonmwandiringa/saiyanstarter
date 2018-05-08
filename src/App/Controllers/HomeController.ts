@@ -8,10 +8,14 @@
 
  class HomeController{
 
-    public static home(req: Request, res: Response){
+    constructor(){
+
+    }
+
+    public home(req: Request, res: Response){
         res.send("working");
     }
 
  }
 
- export default HomeController;
+ export default new HomeController();
