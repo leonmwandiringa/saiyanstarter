@@ -6,7 +6,7 @@
 import * as http from "http";
 import * as debug from "debug";
 import * as path from "path";
-import App from "./App";
+import App from "./Bootstrap/App";
 import * as dotenv from "dotenv";
 import Core from "./App/Controllers/CoreController"
 
