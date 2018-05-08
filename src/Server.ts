@@ -14,9 +14,7 @@ import Core from "./App/Controllers/CoreController"
 debug("ts-express:server");
 
 //initiate dotenv
-dotenv.config({
-    path: "./env"
-});
+dotenv.config();
 
 let Port = Core.normalize(process.env.PORT || 3000); 
 
@@ -29,5 +27,6 @@ Server.on("listening", ()=>{
         let addr = Server.address();
         let bind = (typeof addr === 'string') ? `pipe ${addr}` : `port ${addr.port}`;
         debug(`Listening on ${bind}`);
+        console.log("running");
 });
 Server.on("error", Core.onError);
