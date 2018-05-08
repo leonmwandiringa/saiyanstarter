@@ -7,7 +7,7 @@
 import * as express from "express";
 import * as path from "path";
 import * as bodyParser from "body-parser";
-import * as routes from "./Routes/GlobalRoutes"
+import * as router from "./Routes/GlobalRoutes"
 
 class App{
 
@@ -31,6 +31,7 @@ class App{
 
     private routes(){
 
+        this.express.use("/", router);
   
     }
 
@@ -41,3 +42,5 @@ class App{
 
 
 }
+
+export default new App().express;

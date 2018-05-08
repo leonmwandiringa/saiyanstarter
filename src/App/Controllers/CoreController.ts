@@ -45,4 +45,4 @@
 
  }
 
- export default Core;
+ export default CoreController;

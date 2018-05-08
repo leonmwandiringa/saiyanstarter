@@ -5,10 +5,9 @@
  */
 
 import {Router, Request, Response, NextFunction} from "express";
-import * as path from "path";
-import Home from path.join(__dirname, "./App/Controllers/HomeController");
+import HomeController from "../App/Controllers/HomeController";
 
-class Web{
+class GlobalRoutes{
 
     public router: Router;
 
@@ -19,7 +18,9 @@ class Web{
 
 
     private initiateRoutes(){
-        this.router.get("/", );
+        this.router.get("/", HomeController.home);
     }
 
 }
+
+export default new GlobalRoutes().router;
