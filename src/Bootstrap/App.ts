@@ -10,6 +10,8 @@ import * as path from "path";
 import * as bodyParser from "body-parser";
 import router from "../Routes/GlobalRoutes";
 import LoggerStream from "../App/Controllers/LogsLogger";
+import * as gzip from "compression";
+//import RealtimeMiddleware from "../App/Middlewares/RealtimeLogger";
 
 class App{
 
@@ -27,6 +29,7 @@ class App{
     /* run global modules middlewares */
     private moduleMiddlewares(): void{
 
+        this.express.use(gzip());
         this.express.use(bodyParser.json());
         this.express.use(bodyParser.urlencoded({extended: true}));
 
@@ -36,6 +39,7 @@ class App{
     private LocalMiddlewares(): void{
 
         this.express.use(LoggerStream.writeStream());
+        //this.express.use(RealtimeMiddleware.LogRequest);
 
     }
 
