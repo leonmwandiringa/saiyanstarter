@@ -5,6 +5,7 @@
  */
 
  import { Request, Response, NextFunction } from "express";
+ import * as cluster from "cluster";
 
  class HomeController{
 
@@ -13,7 +14,9 @@
     }
 
     public home(req: Request, res: Response){
+        console.log(`your request was handled by process ${cluster.worker.process.pid}`);
         res.send("working");
+        
     }
 
  }
