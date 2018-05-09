@@ -8,7 +8,7 @@ import * as express from "express";
 import {Request, Response, NextFunction} from "express";
 import * as path from "path";
 import * as bodyParser from "body-parser";
-import router from "../Routes/GlobalRoutes";
+import router from "../Routes/web";
 import LoggerStream from "../App/Controllers/LogsLogger";
 import * as gzip from "compression";
 //import RealtimeMiddleware from "../App/Middlewares/RealtimeLogger";
