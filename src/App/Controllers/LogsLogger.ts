@@ -4,7 +4,6 @@
  * @return void: writing to stream
  */
 
- import { Request, Response, NextFunction } from "express";
  import * as fs from "fs";
  import * as path from "path";
  import * as logger from "morgan";

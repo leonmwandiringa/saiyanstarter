@@ -11,6 +11,8 @@ import * as bodyParser from "body-parser";
 import router from "../Routes/web";
 import LoggerStream from "../App/Controllers/LogsLogger";
 import * as gzip from "compression";
+import CorsSecurity from "../App/Middlewares/CorsSecurity";
+import ServerSecurity from "../App/Middlewares/BaseSecurity";
 //import RealtimeMiddleware from "../App/Middlewares/RealtimeLogger";
 
 class App{
@@ -38,6 +40,13 @@ class App{
     /* define and run global local middlewares */
     private LocalMiddlewares(): void{
 
+        //security middlewares
+        this.express.use(ServerSecurity.CORE);
+        this.express.use(ServerSecurity.XSS);
+        this.express.use(ServerSecurity.CSP);
+        this.express.use(CorsSecurity.CORS);
+
+        //logger to file middlewares
         this.express.use(LoggerStream.writeStream());
         //this.express.use(RealtimeMiddleware.LogRequest);
 
